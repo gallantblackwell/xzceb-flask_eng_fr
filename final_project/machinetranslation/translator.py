@@ -18,27 +18,27 @@ translator = LanguageTranslatorV3(
 
 translator.set_service_url(url)
 
-def englishToFrench(englishText):
+def english_to_french(english_text):
     """
     Translate English to French
     """
-    if len(englishText.strip())==0:
+    if len(english_text.strip())==0:
         raise ValueError("Text must not be empty!")
     result = translator.translate(
-        text=englishText,
+        text=english_text,
         model_id="en-fr"
     ).get_result()
 
     return result.get("translations")[0]["translation"]
 
-def frenchToEnglish(frenchText):
+def french_to_english(french_text):
     """
     Translate French to English
     """
-    if len(frenchText.strip())==0:
+    if len(french_text.strip())==0:
         raise ValueError("Text must not be empty!")
     result = translator.translate(
-        text=frenchText,
+        text=french_text,
         model_id="fr-en"
     ).get_result()
 
